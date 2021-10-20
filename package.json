@@ -1,5 +1,5 @@
 {
-	"name": "front-next",
+	"name": "fs-in-cool-admin-vue",
 	"version": "0.8.0",
 	"scripts": {
 		"dev": "vite",
@@ -9,6 +9,9 @@
 		"lint:eslint": "eslint \"{src,mock}/**/*.{vue,ts,tsx}\" --fix"
 	},
 	"dependencies": {
+		"@fast-crud/fast-extends": "^0.20.0",
+		"@fast-crud/fast-crud": "^0.20.0",
+		"@fast-crud/ui-element": "^0.20.0",
 		"array.prototype.flat": "^1.2.4",
 		"axios": "^0.21.1",
 		"cl-admin-crud-vue3": "^0.9.3",
@@ -16,11 +19,13 @@
 		"clone-deep": "^4.0.1",
 		"codemirror": "^5.62.0",
 		"core-js": "^3.6.5",
+		"dayjs": "^1.10.4",
 		"echarts": "^5.0.2",
 		"element-plus": "^1.1.0-beta.20",
 		"file-saver": "^2.0.5",
 		"glob": "^7.1.6",
 		"js-beautify": "^1.13.5",
+		"lodash": "^4.17.21",
 		"merge": "^2.1.1",
 		"mitt": "^2.1.0",
 		"mockjs": "^1.1.0",

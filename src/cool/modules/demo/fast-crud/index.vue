@@ -4,10 +4,10 @@
 
 <script>
 import { defineComponent, ref, onMounted } from "vue";
-import createCrudOptions from "../fast-crud/crud";
+import createCrudOptions from "./crud";
 import { useExpose, useCrud } from "@fast-crud/fast-crud";
 export default defineComponent({
-	name: "crud",
+	name: "form-group",
 	setup() {
 		// crud组件的ref
 		const crudRef = ref();

@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, inject, onBeforeMount, ref } from "vue-demi";
+import { defineComponent, inject, onBeforeMount, ref } from "vue";
 import { useRefs } from "/@/core";
 
 export default defineComponent({

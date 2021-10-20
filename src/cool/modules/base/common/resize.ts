@@ -11,7 +11,7 @@ function resize() {
 
 	const { browser, menuCollapse, app } = store.getters;
 
-	if (browser.isMini) {
+	if (browser && browser.isMini) {
 		// 小屏幕下隐藏一级菜单
 		if (lock.showAMenu === null) {
 			lock.showAMenu = app.conf.showAMenu;

@@ -6,7 +6,9 @@ import { MenuItem } from "/$/base/types";
 const routerMode: String = "history";
 
 // 开发模式
-const isDev: Boolean = import.meta.env.MODE === "development";
+const isDev: Boolean = import.meta.env.VITE_USE_PRO
+	? false
+	: import.meta.env.MODE === "development";
 
 // Host
 const host: String = "https://show.cool-admin.com";

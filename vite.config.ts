@@ -42,10 +42,10 @@ export default (): UserConfig => {
 					rewrite: (path) => path.replace(/^\/dev/, "")
 				},
 
-				"/pro": {
+				"/api": {
 					target: "https://show.cool-admin.com",
 					changeOrigin: true,
-					rewrite: (path) => path.replace(/^\/pro/, "/api")
+					rewrite: (path) => path.replace(/^\/api/, "/api")
 				}
 			}
 		},

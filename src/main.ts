@@ -22,6 +22,8 @@ import mitt from "mitt";
 // echarts
 import VueECharts from "vue-echarts";
 
+import setupFastCrud from "./setup-fast-crud";
+import "./setup-fast-crud.scss";
 const app = createApp(App);
 
 bootstrap(app)
@@ -31,6 +33,10 @@ bootstrap(app)
 
 		// // 事件通讯
 		app.provide("mitt", mitt());
+
+		//----------- 安装fast-crud--------------
+		const i18n = null; //cool-admin-vue不支持国际化？
+		setupFastCrud(app, i18n);
 
 		app.use(store).use(router).use(ElementPlus).mount("#app");
 	})
