@@ -81,8 +81,8 @@ export default defineComponent({
 
 		// 登录表单数据
 		const form = reactive({
-			username: "",
-			password: "",
+			username: "admin",
+			password: "123456",
 			captchaId: "",
 			verifyCode: ""
 		});
