@@ -38,7 +38,7 @@ bootstrap(app)
 		const i18n = null; //cool-admin-vue不支持国际化？
 		setupFastCrud(app, i18n);
 
-		app.use(store).use(router).use(ElementPlus).mount("#app");
+		app.use(store).use(router).use(ElementPlus, { size: "small" }).mount("#app");
 	})
 	.catch((err: string) => {
 		console.error(`COOL-ADMIN 启动失败`, err);
