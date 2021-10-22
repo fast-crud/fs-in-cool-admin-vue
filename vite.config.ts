@@ -15,7 +15,7 @@ function resolve(dir: string) {
 
 export default (): UserConfig => {
 	return {
-		base: "/",
+		base: "/cool/",
 		plugins: [vue(), viteCompression(),PurgeIcons(), Components(), vueJsx(), svgBuilder("./src/icons/svg/")],
 		resolve: {
 			alias: {

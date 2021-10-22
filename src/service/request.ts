@@ -85,6 +85,10 @@ axios.interceptors.request.use(
 			}
 		}
 
+		if (!config.base) {
+			config.base = import.meta.env.VITE_BASE_URL;
+		}
+
 		return config;
 	},
 	(error) => {

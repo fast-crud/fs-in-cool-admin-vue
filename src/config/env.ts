@@ -3,7 +3,7 @@ import { getUrlParam } from "/@/core/utils";
 import { MenuItem } from "/$/base/types";
 
 // 路由模式
-const routerMode: String = "history";
+const routerMode: String = "hash"; //"history";
 
 // 开发模式
 const isDev: Boolean = import.meta.env.VITE_USE_PRO
