@@ -1,9 +1,10 @@
-import axios from "/src/service/request";
+import request from "/src/service/request";
 import { FastCrud } from "@fast-crud/fast-crud";
 import "@fast-crud/fast-crud/dist/style.css";
 import { FsExtendsUploader, FsExtendsEditor } from "@fast-crud/fast-extends";
 import "@fast-crud/fast-extends/dist/style.css";
 import UiElement from "@fast-crud/ui-element";
+import "@purge-icons/generated";
 
 // 导出 setupFastCrud
 // 国际化配置见 /src/locales/en  or zh_CN
@@ -15,7 +16,7 @@ export default function (app: any, i18n: any) {
 		i18n,
 		async dictRequest(opts: any) {
 			const { url } = opts;
-			return await axios.request({ url });
+			return await request({ url });
 		},
 		commonOptions() {
 			return {
@@ -66,13 +67,12 @@ export default function (app: any, i18n: any) {
 			secretKey: "", // 传了secretKey 和secretId 代表使用本地签名模式（不安全，生产环境不推荐）
 			async getAuthorization() {
 				// 不传secretKey代表使用临时签名模式,此时此参数必传（安全，生产环境推荐）
-				return await axios.request(
-					{
-						url: "/upload/cos/getAuthorization",
-						method: "get"
-					},
-					{ apiUrl: "http://www.docmirror.cn:7070/api" }
-				);
+				const res = await request({
+					url: "http://cool.docmirror.cn:18888/api/upload/cos/getAuthorization",
+					method: "get"
+				});
+				console.log("upload authorization:", res);
+				return res;
 			},
 			successHandle(ret: any) {
 				// 上传完成后可以在此处处理结果，修改url什么的
@@ -88,7 +88,7 @@ export default function (app: any, i18n: any) {
 			accessKeySecret: "",
 			async getAuthorization() {
 				// 不传accessKeySecret代表使用临时签名模式,此时此参数必传（安全，生产环境推荐）
-				return axios.request(
+				return request(
 					{
 						url: "/upload/alioss/getAuthorization",
 						method: "get"
@@ -110,7 +110,7 @@ export default function (app: any, i18n: any) {
 			bucket: "d2p-demo",
 			async getToken() {
 				// return  {token:xxx,expires:xxx}
-				return axios.request(
+				return request(
 					{
 						url: "/upload/qiniu/getToken",
 						method: "get"

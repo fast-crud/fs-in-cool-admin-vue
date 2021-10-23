@@ -6,9 +6,7 @@ import { MenuItem } from "/$/base/types";
 const routerMode: String = "hash"; //"history";
 
 // 开发模式
-const isDev: Boolean = import.meta.env.VITE_USE_PRO
-	? false
-	: import.meta.env.MODE === "development";
+const isDev: Boolean = import.meta.env.MODE === "development";
 
 // Host
 const host: String = "https://show.cool-admin.com";
@@ -20,7 +18,7 @@ const baseUrl: String = (function () {
 	if (proxy) {
 		store.set("proxy", proxy);
 	} else {
-		proxy = store.get("proxy") || "dev";
+		proxy = store.get("proxy") || import.meta.env.VITE_API_PROXY || "dev";
 	}
 
 	return isDev ? `/${proxy}/admin` : `/api/admin`;

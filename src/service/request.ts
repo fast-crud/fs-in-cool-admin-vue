@@ -9,7 +9,6 @@ import { ElMessage } from "element-plus";
 
 axios.defaults.timeout = 30000;
 axios.defaults.withCredentials = true;
-
 NProgress.configure({
 	showSpinner: false
 });
@@ -84,11 +83,6 @@ axios.interceptors.request.use(
 				});
 			}
 		}
-
-		if (!config.base) {
-			config.base = import.meta.env.VITE_BASE_URL;
-		}
-
 		return config;
 	},
 	(error) => {
@@ -107,6 +101,8 @@ axios.interceptors.response.use(
 		}
 
 		switch (code) {
+			case 0:
+				return data;
 			case 1000:
 				return data;
 			default:

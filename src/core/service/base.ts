@@ -36,6 +36,8 @@ export default class BaseService {
 			} else {
 				ns = this.proxy ? this.url : baseUrl;
 			}
+
+			ns = import.meta.env.VITE_BASE_URL + ns;
 		}
 
 		// 拼接前缀
