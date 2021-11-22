@@ -10,15 +10,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, inject, onBeforeMount, ref } from "vue";
-import { useRefs } from "/@/core";
+import { defineComponent, onBeforeMount, ref } from "vue";
+import { useCool } from "/@/core";
 
 export default defineComponent({
 	name: "cl-chat-notice",
 
 	setup() {
-		const service = inject<any>("service");
-		const { refs, setRefs } = useRefs();
+		const { refs, setRefs, service } = useCool();
 
 		const number = ref<number>(0);
 
